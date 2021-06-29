@@ -1,5 +1,7 @@
 package br.com.casadocodigo.novoautor;
 
+import br.com.casadocodigo.validator.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -11,6 +13,7 @@ public class NovoAutorDto {
 
     @NotBlank
     @Email
+    @UniqueValue(domainClass = AutorEntity.class, fieldName = "email")
     private String email;
 
     @NotBlank

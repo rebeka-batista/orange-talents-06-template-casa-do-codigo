@@ -11,7 +11,7 @@ import java.util.Optional;
 public class ExceptionEmailDuplicadoValidator implements Validator {
 
     @Autowired
-    AutorRepository autorRepository;
+    private AutorRepository autorRepository;
 
     @Override
     public boolean supports(Class<?> clazz) {

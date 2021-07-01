@@ -10,12 +10,12 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Documented
-@Constraint(validatedBy = {UniqueValueValidator.class})
+@Constraint(validatedBy = {ExistsIdValidator.class})
 @Target({FIELD})
 @Retention(RUNTIME)
-public @interface UniqueValue {
+public @interface ExistsId {
 
-    String message() default "{br.com.casadocodigo.validator.uniquevalue}";
+    String message() default "{br.com.casadocodigo.validator.existsid}";
 
     Class<?>[] groups() default {};
 

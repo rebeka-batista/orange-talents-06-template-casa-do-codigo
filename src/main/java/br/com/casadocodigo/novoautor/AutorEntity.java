@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "autor")
 public class AutorEntity {
 
     @Id
@@ -16,18 +16,19 @@ public class AutorEntity {
     private Long id;
 
     @NotBlank
-    @Column(nullable = false, unique = true)
+    @Column(name = "nome", nullable = false, unique = true)
     private String nome;
 
     @NotBlank
     @Email
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @NotBlank
     @Size(max = 400)
-    @Column(nullable = false, unique = true, length = 400)
+    @Column(name = "descricao", nullable = false, unique = true, length = 400)
     private String descricao;
+
     private LocalDateTime instanteCadastro = LocalDateTime.now();
 
     public AutorEntity() {
@@ -46,31 +47,13 @@ public class AutorEntity {
 
     @Override
     public String toString() {
-        return "Autor -> " +
+        return "Novo Autor: " +
                 "\nId: " + id +
                 ", \nNome: " + nome +
                 ", \nEmail: " + email +
-                ", \nDescricao: " + descricao;
+                ", \nDescricao: " + descricao +
+                ", \nData/Hora do cadastro: " + instanteCadastro;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public LocalDateTime getInstanteCadastro() {
-        return instanteCadastro;
-    }
 }
 

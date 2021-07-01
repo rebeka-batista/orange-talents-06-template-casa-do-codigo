@@ -1,6 +1,7 @@
 package br.com.casadocodigo.novoautor;
 
 import br.com.casadocodigo.validator.UniqueValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -14,10 +15,12 @@ public class NovoAutorDto {
     @NotBlank
     @Email
     @UniqueValue(domainClass = AutorEntity.class, fieldName = "email")
+    @JsonProperty("email")
     private String email;
 
     @NotBlank
     @Size(max = 400)
+    @JsonProperty("descricao")
     private String descricao;
 
     public NovoAutorDto(@NotBlank String nome,

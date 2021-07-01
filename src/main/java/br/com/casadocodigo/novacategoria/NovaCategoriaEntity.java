@@ -13,7 +13,7 @@ public class NovaCategoriaEntity {
     private Long id;
 
     @NotBlank
-    @Column(nullable = false, unique = true)
+    @Column(name = "nome", nullable = false, unique = true)
     private String nome;
 
     public NovaCategoriaEntity() {

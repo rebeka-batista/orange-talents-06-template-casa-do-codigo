@@ -15,7 +15,7 @@ import javax.validation.Valid;
 public class LivroController {
 
     @PersistenceContext
-    EntityManager manager;
+    private EntityManager manager;
 
     @PostMapping("/cadastro")
     @Transactional

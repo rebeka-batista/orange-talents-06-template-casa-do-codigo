@@ -101,11 +101,43 @@ public class LivroEntity {
                 ", \nId do Autor: " + idAutor;
     }
 
-    public void setDataLancamento(LocalDate dataLancamento) {
-        this.dataLancamento = dataLancamento;
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPrecoLivro() {
+        return precoLivro;
+    }
+
+    public Integer getQtdPaginas() {
+        return qtdPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 
     public LocalDate getDataLancamento() {
         return dataLancamento;
+    }
+
+    public Long getIdCategoria() {
+        return idCategoria;
+    }
+
+    public Long getIdAutor() {
+        return idAutor;
     }
 }

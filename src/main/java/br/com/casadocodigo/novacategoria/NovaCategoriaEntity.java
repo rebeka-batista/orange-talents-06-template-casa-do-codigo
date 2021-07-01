@@ -5,7 +5,7 @@ import org.springframework.util.Assert;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Entity
+@Entity(name = "categoria")
 public class NovaCategoriaEntity {
 
     @Id

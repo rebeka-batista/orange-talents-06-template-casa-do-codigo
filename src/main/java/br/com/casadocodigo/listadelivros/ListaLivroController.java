@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,6 +17,11 @@ public class ListaLivroController {
 
     @Autowired
     private LivroRepository repository;
+
+    @GetMapping
+    public List<LivroEntity> listaDeLivros() {
+        return repository.findAll();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<DetalhesLivroDto> listarLivros(@PathVariable Long id) {

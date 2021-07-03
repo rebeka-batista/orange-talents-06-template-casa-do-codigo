@@ -1,4 +1,4 @@
-package br.com.casadocodigo.cadastroestado;
+package br.com.casadocodigo.compra;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,18 +11,19 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/estado")
-public class CadastroEstadoController {
+@RequestMapping("/compra")
+public class CompraController {
 
     @PersistenceContext
     private EntityManager manager;
 
     @PostMapping("/cadastro")
     @Transactional
-    public String cadastrarLivro(@RequestBody @Valid CadastroEstadoDto estado) {
-        EstadoEntity e = estado.toModel(manager);
-        manager.persist(e);
-        return e.toString();
+    public String fazerCompra(@RequestBody @Valid CompraDto compra) {
+        CompraEntity c = compra.toModel();
+        manager.persist(c);
+        return c.toString();
     }
+
 
 }
